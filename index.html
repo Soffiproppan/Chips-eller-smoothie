@@ -1,31 +1,45 @@
 <!doctype html>
-<html lan eng>
+<html lang=en>
 <head>
-<meta charset=utf8>
+<meta charset=utf-8>
   <title>Chips eller smoothie</title>
-<link href="./main.css" rel="stylesheet">
+<link href="./main.css" rel="stylesheet" type=text/css>
 </head>
 <body>
   <h1>Help me choose between...</h1>
-    <img src=https://media.giphy.com/media/xTiQytOEqr2U33lYkg/giphy.gif alt=Chips or smoothie">
-  <div class="input-section">
+    <img src="https://media.giphy.com/media/xTiQytOEqr2U33lYkg/giphy.gif" alt="Chips or smoothie">
+  <div class="inputSection">
     <div class="inputs">
       <input placeholder="Chips, smoothie, fruit, candy, ice cream"></input>
     </div>
-    <button class="addoption">Add</button>
+    <button class="addOption">Add</button>
       </div>
-      <div class=resultsection"> </div>
-    <button class="button2">Go!!</button>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>
+      <div class="resultSection"> </div>
+    <button class="submit">Go!!</button>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"> </script>
       <script>
       $(document).ready(function() {
-      $('.resultsection').hide()
-      var add_option=function(){
-        $('.inputs').append ('<input></input>')
-      }
+      $('.resultSection').hide()
 
-          $('.addoption').click(add_option)
-      })
+      var add_option = function() {
+        $('.inputs').append('<input></input>')
+      }
+      $('.addOption').click(add_option)
+
+      var options = []
+      var submit = function() {
+        $('.inputSection').hide()
+        $('.resultSection').css('display','flex')
+        $('input').each(function() {
+          options.push($(this).val())
+        })
+        var winner = options[Math.floor(Math.random()*options.length)]
+        console.log(winner)
+        $('.resultSection').text (winner)
+      }
+      $('.submit').click(submit)
+  })
       </script>
 </body>
 </html>
