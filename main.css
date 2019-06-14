@@ -20,7 +20,7 @@ body {
     color: white;
     }
   .submit {
-    margin: 50px 50px 50px 50px;
+    margin: 10px 50px 50px 50px;
     font-size: 20px;
     background-color: #5bd1d7;
     border-radius: 1px;
@@ -28,13 +28,16 @@ body {
     border: 2px solid white;
     color: white;
   }
+  .css-selector {
+font-family: 'Karla', sans-serif;
+}
 
   h1 {
-    font-weight: lighter;
-    font-size: 45px;
-    font-style: italic;
+    font-family: 'Karla', sans-serif;
+    font-size: 38px;
     letter-spacing: 2px;
     margin-bottom: 40px;
+    text-shadow: 3px 3px 3px #aaa;
     }
 
     .inputSection {
